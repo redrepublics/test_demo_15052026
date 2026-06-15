@@ -11,6 +11,7 @@ response = requests.get(url)
 data = response.json()
 usd_rub = data['data']['USDRUB']
 
-rub = float(input("Введите сумму в рублях для пересчета на доллары США"))
+rub = float(input("Введите сумму в рублях для пересчета на доллары США:  "))
 result = float(rub) / float(usd_rub)
-print("Получилось ", result, " долларов США намомент расчета", current_datetime)
+format_result = "{:.2f}".format(result)
+print("Получилось ", format_result, " долларов США на момент расчета", current_datetime)
